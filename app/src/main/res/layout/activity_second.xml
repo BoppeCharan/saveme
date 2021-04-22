@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.drawerlayout.widget.DrawerLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:theme="@style/ThemeOverlay.AppCompat"
+    android:layout_height="match_parent"
+    android:background="@drawable/nyc_bg"
+    android:orientation="vertical"
+    android:id="@+id/Drawer"
+    tools:context=".App1"
+    tools:openDrawer="start">
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+            <androidx.appcompat.widget.Toolbar
+                android:layout_width="wrap_content"
+                android:layout_height="?attr/actionBarSize"
+                android:background="@color/colorPrimary"
+                android:id="@+id/toolbar"
+                android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
+                app:popupTheme="@style/ThemeOverlay.AppCompat"
+                android:elevation="4dp"/>
+            <FrameLayout
+                android:id="@+id/frag_con"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"/>
+
+            <EditText
+                android:id="@+id/edt_key1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="30dp"
+                android:background="@drawable/ic_rounder"
+                android:ellipsize="none"
+                android:hint="Header/Key"
+                android:padding="10dp"
+                android:textColor="#070000" />
+
+            <EditText
+                android:id="@+id/edt_value"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:padding="23dp"
+                android:layout_margin="30dp"
+                android:background="@drawable/ic_rounder"
+                android:hint="Information !!"
+                android:textColor="#100F0F"
+                android:textIsSelectable="true"
+                android:textSize="24sp"  />
+
+            <Button
+                android:id="@+id/btn_save"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginBottom="50dp"
+                android:text="SAVE" />
+
+
+        </LinearLayout>
+
+
+
+    </ScrollView>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:gravity="bottom">
+        <com.google.android.gms.ads.AdView
+            xmlns:ads="http://schemas.android.com/apk/res-auto"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/adview"
+            android:layout_gravity="center"
+            ads:adSize="BANNER"
+            ads:adUnitId="ca-app-pub-3908726115058703/6187733351"/>
+
+
+    </LinearLayout>
+
+
+    <com.google.android.material.navigation.NavigationView
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:id="@+id/nav_bar"
+        android:layout_gravity="start"
+        app:headerLayout="@layout/nav_header"
+        app:menu="@menu/menu"/>
+
+
+</androidx.drawerlayout.widget.DrawerLayout>
